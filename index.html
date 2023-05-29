@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PiCoffee</title>
+		<link rel="stylesheet" href="styles/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+		<script src="https://unpkg.com/feather-icons"></script>
+	</head>
+	<body>
+		<div class="nav-wrapper">
+			<nav class="navbar" id="navbar-transparent">
+				<a href="#" class="nav-logo">PiCoffe.</a>
+				<div class="navbar-nav">
+					<a href="#home">Home</a>
+					<a href="#about">About Us</a>
+					<a href="#menu">Menu</a>
+					<a href="#contact">Contact</a>
+				</div>
+				<div class="navbar-extra">
+					<a href="#" id="search">
+						<i data-feather="search"></i>
+					</a>
+					<a href="#" id="shopping-cart">
+						<i data-feather="shopping-cart"></i>
+					</a>
+					<a href="#" id="hamburger-menu">
+						<i data-feather="menu"></i>
+					</a>
+				</div>
+			<nav class="navbar" id="navbar-gradient">
+				<a href="#" class="nav-logo">PiCoffe.</a>
+				<div class="navbar-nav">
+					<a href="#home">Home</a>
+					<a href="#about">About Us</a>
+					<a href="#menu">Menu</a>
+					<a href="#contact">Contact</a>
+				</div>
+				<div class="navbar-extra">
+					<a href="#" id="search">
+						<i data-feather="search"></i>
+					</a>
+					<a href="#" id="shopping-cart">
+						<i data-feather="shopping-cart"></i>
+					</a>
+					<a href="#" id="hamburger-menu">
+						<i data-feather="menu"></i>
+					</a>
+				</div>
+			</nav>
+		</div>
+		<section class="hero" id="home">
+			<main class="content">
+				<h1>Mari Cobain <span>Bijinya</span> Ihsan</h1>
+				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, sed.</p>
+				<a href="#" class="cta">Beli Sekarang!</a>
+			</main>
+		</section>
+
+		<section class="about" id="about">
+			<h2>About Us</h2>
+			<div class="row">
+				<div class="about-img">
+					<img src="assets/about-us.jpg" alt="" />
+				</div>
+				<div class="content">
+					<h3>Kenapa memilih kopi kami?</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo alias enim officia laudantium, nesciunt omnis.</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod itaque quis in fugit nobis omnis possimus temporibus repellat est doloribus?</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- icons scripts-->
+		<script>
+			feather.replace();
+		</script>
+		<!-- js -->
+		<script>
+			const navbarNav = document.querySelector(".navbar-nav");
+			document.querySelector("#hamburger-menu").onclick = () => {
+				navbarNav.classList.toggle("active");
+				const hmenu = document.querySelector("#hamburger-menu");
+
+				document.addEventListener("click", function (e) {
+					if (!hmenu.contains(e.target) && !navbarNav.contains(e.target)) {
+						navbarNav.classList.remove("active");
+					}
+				});
+			};
+
+			const navbargradient = document.querySelector("#navbar-gradient");
+			const navtransparent = document.querySelector("#navbar-transparent");
+			window.addEventListener("scroll", function () {
+				navbargradient.classList.toggle("active", window.scrollY > 80);
+			});
+
+			
+		</script>
+		<!--<script src="main.js"></script>-->
+	</body>
+</html>
